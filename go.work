@@ -4,4 +4,5 @@ use (
     ./tutorial-create-a-module/call_code_from_another_module
     ./tutorial-create-a-module/create_a_go_module
     ./tutorial-getting-started/get_started_with_go
+    ./tutorial-getting-started-with-multi-module-workspaces/hello
 )
