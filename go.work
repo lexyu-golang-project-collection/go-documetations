@@ -1,8 +1,10 @@
 go 1.19
 
 use (
-    ./tutorial-create-a-module/call_code_from_another_module
-    ./tutorial-create-a-module/create_a_go_module
-    ./tutorial-getting-started/get_started_with_go
-    ./tutorial-getting-started-with-multi-module-workspaces/hello
+	./tutorial-create-a-module/call_code_from_another_module
+	./tutorial-create-a-module/create_a_go_module
+	./tutorial-getting-started-with-multi-module-workspaces/example
+	./tutorial-getting-started-with-multi-module-workspaces/hello
+	./tutorial-getting-started/get_started_with_go
+	./tutorial-accessing-a-relational-database/data-access
 )
