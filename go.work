@@ -5,6 +5,7 @@ use (
 	./tutorial-create-a-module/call_code_from_another_module
 	./tutorial-create-a-module/create_a_go_module
 	./tutorial-developing-a-restful-api-with-go-and-gin/web-service-gin
+	./tutorial-getting-started-with-fuzzing
 	./tutorial-getting-started-with-multi-module-workspaces/example
 	./tutorial-getting-started-with-multi-module-workspaces/hello
 	./tutorial-getting-started/get_started_with_go
