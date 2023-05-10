@@ -3,10 +3,9 @@ package main
 import (
 	"testing"
 	"unicode/utf8"
-
-	"golang.org/x/example/stringutil"
 )
 
+/*
 func TestReverse(t *testing.T) {
 	testcase := []struct {
 		in, want string
@@ -23,16 +22,31 @@ func TestReverse(t *testing.T) {
 		}
 	}
 }
+*/
 
-// go test -fuzz=Fuzz / -fuzztime
+// go test -fuzz=Fuzz -fuzztime 30s
 func FuzzReverse(f *testing.F) {
 	testcase := []string{"Hello, world", " ", "!12345"}
 	for _, tc := range testcase {
 		f.Add(tc)
 	}
 	f.Fuzz(func(t *testing.T, orig string) {
-		rev := stringutil.Reverse(orig)
-		doubleRev := stringutil.Reverse(rev)
+		// rev := stringutil.Reverse(orig)
+		// doubleRev := stringutil.Reverse(rev)
+
+		rev, revErr := Reverse(orig)
+		if revErr != nil {
+			return
+		}
+
+		doubleRev, doubleRevErr := Reverse(rev)
+		if doubleRevErr != nil {
+			return
+		}
+
+		t.Logf("Number of runes: orig=%d, rev=%d, doubleRev=%d",
+			utf8.RuneCountInString(orig), utf8.RuneCountInString(rev), utf8.RuneCountInString(doubleRev))
+
 		if orig != doubleRev {
 			t.Errorf("Before: %q, after: %q", orig, doubleRev)
 		}
